@@ -5,8 +5,7 @@ import React from 'react';
 export default function Details() {
   return (
     <div>
-      Details page
-      <p>Details page</p>
+      <h1>Details page</h1>
     </div>
   );
 }

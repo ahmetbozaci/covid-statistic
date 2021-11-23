@@ -16,7 +16,7 @@ const getData = (endpoint = '') => async (dispatch) => {
   dispatch(loadData(data));
 };
 
-export const getCountryData = (endpoint = 'spain') => async (dispatch) => {
+export const getCountryData = (endpoint) => async (dispatch) => {
   const response = await fetch(`${URL}/${endpoint}`);
   const data = await response.json();
   dispatch(loadCountryData(data));

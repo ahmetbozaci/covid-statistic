@@ -2,10 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './App';
-import getData from './redux/API';
 import store from './redux/configureStore';
-
-store.dispatch(getData());
 
 ReactDOM.render(
   <React.StrictMode>

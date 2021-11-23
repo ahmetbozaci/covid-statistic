@@ -1,44 +1,51 @@
-/** @format */
-
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector } from 'react-redux';
+import { HiOutlineArrowCircleRight } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
+import { IoIosArrowBack, IoMdMic, IoMdSettings } from 'react-icons/io';
 import store from '../redux/configureStore';
-import { getCountryData } from '../redux/API';
+import getWorldData from '../redux/API';
 
+store.dispatch(getWorldData(''));
 const Home = () => {
-  const state = useSelector((state) => state.covidReducer);
+  const state = useSelector((state) => state.covidData);
   const firstItem = Math.floor(Math.random() * state.length + 1);
   const newState = state.slice(firstItem, firstItem + 10);
-
-  // const handleClick = (e) => {
-  //   console.log('hello');
-  //   console.log(e);
-  //   store.dispatch(getCountryData('USA'));
-  // };
-
   return (
     <div>
-      <h1>Home Page</h1>
+      <div className="d-flex justify-content-around">
+        <IoIosArrowBack />
+        <p>World details</p>
+        <div>
+          <IoMdMic />
+          <IoMdSettings />
+        </div>
+      </div>
+      <div>
+        <h3> World </h3>
+        {/* <p>{state[0]['Total Cases_text']}</p> */}
+      </div>
+      <hr />
       {newState.map((item) => (
         <div key={uuidv4()}>
           <Link to="/details">
-            <button
+            <span>
+              <HiOutlineArrowCircleRight />
+            </span>
+            <div
+              aria-hidden="true"
               onClick={() => {
-                store.dispatch(getCountryData(item.Country_text));
+                store.dispatch(getWorldData(`/${item.Country_text}`));
               }}
               type="button"
             >
               {item.Country_text}
-            </button>
+            </div>
             <p>
-              - New case :
-              {item['New Deaths_text'] === ''
-                ? 0
-                : item['New Deaths_text']}
+              {item['New Deaths_text'] === '' ? 0 : item['New Deaths_text']}
             </p>
           </Link>
-          <br />
+          <hr />
         </div>
       ))}
     </div>

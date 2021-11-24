@@ -14,7 +14,7 @@ store.dispatch(getWorldData(''));
 const Home = () => {
   const state = useSelector((state) => state.covidData);
   const firstItem = Math.floor(Math.random() * state.length + 1);
-  const newState = state.slice(firstItem, firstItem + 10);
+  const newState = state.slice(firstItem, firstItem + 20);
   return (
     <div className="text-light">
       <div className="d-flex justify-content-between pink p-4">

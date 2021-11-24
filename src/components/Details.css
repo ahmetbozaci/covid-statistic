@@ -5,10 +5,10 @@
 .pink2 {
   background-color: #D1447A;
 }
-.country:nth-child(even) {
+.country:nth-child(4n+1), .country:nth-child(4n) {
   background-color: #E74987;
 }
-.country:nth-child(odd) {
+.country:nth-child(4n+2), .country:nth-child(4n+3) {
   background-color: #D1447A;;
 }
 

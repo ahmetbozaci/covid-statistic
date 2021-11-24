@@ -1,3 +1,5 @@
+/** @format */
+
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { IoIosArrowBack, IoMdMic, IoMdSettings } from 'react-icons/io';
@@ -30,32 +32,45 @@ const Details = () => {
         <li className="p-4 py-5 text-end justify-content-end pink ">
           <p>{state.Country_text}</p>
           <span className="fw-light">Last Update</span>
-          <p className="fw-light">
-            {state['Last Update']}
-          </p>
+          <p className="fw-light">{state['Last Update']}</p>
         </li>
-        <li className="d-flex justify-content-between p-4 pink2 ">
+        <li className="pink2 px-4 py-1 fw-normal">Covid Statistic</li>
+        <li className="d-flex justify-content-between p-4 pink">
+          <span className="fw-bold">Active Cases</span>
+          <div className="fw-normal">
+            <span>{state['Active Cases_text']}</span>
+            <HiOutlineArrowCircleRight className="ms-3" />
+          </div>
+        </li>
+        <li className="d-flex justify-content-between p-4 pink2">
           <span>New Case</span>
+          <div className="fw-normal">
+            {state['New Cases_text'] === '' ? 0 : state['New Cases_text']}
+            <HiOutlineArrowCircleRight className="ms-3" />
+          </div>
+        </li>
+        <li className="d-flex justify-content-between p-4 pink">
+          <span>New Deaths</span>
           <div className="fw-normal">
             {state['New Deaths_text'] === '' ? 0 : state['New Deaths_text']}
             <HiOutlineArrowCircleRight className="ms-3" />
           </div>
         </li>
-        <li className="d-flex justify-content-between p-4 pink">
+        <li className="d-flex justify-content-between p-4 pink2">
           <span>Total Case</span>
           <div className="fw-normal">
             {state['Total Cases_text']}
             <HiOutlineArrowCircleRight className="ms-3" />
           </div>
         </li>
-        <li className="d-flex justify-content-between p-4 pink2">
+        <li className="d-flex justify-content-between p-4 pink">
           <span>Total Death</span>
           <div className="fw-normal">
             {state['Total Deaths_text']}
             <HiOutlineArrowCircleRight className="ms-3" />
           </div>
         </li>
-        <li className="d-flex justify-content-between p-4 pink">
+        <li className="d-flex justify-content-between p-4 pink2">
           <span>Total Recovered</span>
           <div className="fw-normal">
             {state['Total Recovered_text']}

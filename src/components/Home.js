@@ -1,10 +1,14 @@
+/** @format */
+
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector } from 'react-redux';
 import { HiOutlineArrowCircleRight } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import { IoIosArrowBack, IoMdMic, IoMdSettings } from 'react-icons/io';
+import { Row, Col } from 'react-bootstrap';
 import store from '../redux/configureStore';
 import getWorldData from '../redux/API';
+import './Details.css';
 
 store.dispatch(getWorldData(''));
 const Home = () => {
@@ -12,42 +16,51 @@ const Home = () => {
   const firstItem = Math.floor(Math.random() * state.length + 1);
   const newState = state.slice(firstItem, firstItem + 10);
   return (
-    <div>
-      <div className="d-flex justify-content-around">
+    <div className="text-light">
+      <div className="d-flex justify-content-between pink p-4">
         <IoIosArrowBack />
-        <p>World details</p>
+        <span>World details</span>
         <div>
           <IoMdMic />
-          <IoMdSettings />
+          <IoMdSettings className="ms-3" />
         </div>
       </div>
-      <div>
-        <h3> World </h3>
-        {/* <p>{state[0]['Total Cases_text']}</p> */}
-      </div>
-      <hr />
-      {newState.map((item) => (
-        <div key={uuidv4()}>
-          <Link to="/details">
-            <span>
-              <HiOutlineArrowCircleRight />
-            </span>
-            <div
-              aria-hidden="true"
-              onClick={() => {
-                store.dispatch(getWorldData(`/${item.Country_text}`));
-              }}
-              type="button"
+      <Row className="">
+        <Col xs={6} className="pink2 p-5" />
+        <Col xs={6} className="pink p-5 fw-bold">
+          {' '}
+          World
+          <p className="fw-normal">6534634</p>
+        </Col>
+      </Row>
+      <div className="pink fw-bold p-2">Countries New Case</div>
+      <Row className="m-0">
+        {newState.map((item) => (
+          <Col xs={6} key={uuidv4()} className="country text-end py-2">
+            <Link
+              to="/details"
+              className="text-light text-decoration-none col px-3"
             >
-              {item.Country_text}
-            </div>
-            <p>
-              {item['New Deaths_text'] === '' ? 0 : item['New Deaths_text']}
-            </p>
-          </Link>
-          <hr />
-        </div>
-      ))}
+              <span>
+                <HiOutlineArrowCircleRight className="fs-4 mb-2" />
+              </span>
+              <div
+                className="mt-5 fs-3 pt-4"
+                aria-hidden="true"
+                onClick={() => {
+                  store.dispatch(getWorldData(`/${item.Country_text}`));
+                }}
+                type="button"
+              >
+                {item.Country_text}
+                <p className="m-0">
+                  {item['New Deaths_text'] === '' ? 0 : item['New Deaths_text']}
+                </p>
+              </div>
+            </Link>
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 };

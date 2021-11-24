@@ -5,3 +5,10 @@
 .pink2 {
   background-color: #D1447A;
 }
+.country:nth-child(even) {
+  background-color: #E74987;
+}
+.country:nth-child(odd) {
+  background-color: #D1447A;;
+}
+

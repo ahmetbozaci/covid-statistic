@@ -25,7 +25,7 @@ const Home = () => {
           <IoMdSettings className="ms-3" />
         </div>
       </div>
-      <Row className="">
+      <Row className="m-0">
         <Col xs={6} className="pink2 p-5" />
         <Col xs={6} className="pink p-5 fw-bold">
           {' '}

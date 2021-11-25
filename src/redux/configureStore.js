@@ -5,7 +5,6 @@ import covidReducer from './covid';
 
 const rootReducer = combineReducers({
   covidData: covidReducer,
-
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));

@@ -27,7 +27,7 @@ const Home = () => {
       </div>
       <Row className="m-0 pink">
         <Col xs={6} className="p-3" />
-        <Col xs={6} className="p-3 fw-bolder fs-3">
+        <Col xs={6} className="p-3 fw-bolder fs-3 pink">
           <p className="mt-5">
             WORLD
             <br />

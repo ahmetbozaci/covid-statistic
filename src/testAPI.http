@@ -1,1 +1,1 @@
-GET https://covid-19.dataflowkit.com/v1
+GET https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest 

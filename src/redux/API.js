@@ -1,11 +1,15 @@
-import { loadData } from './covid';
+import { loadWorldData, loadCountryData } from './covid';
 
 const URL = 'https://covid-19.dataflowkit.com/v1';
 
-const getWorldData = (endpoint) => async (dispatch) => {
-  const response = await fetch(`${URL}${endpoint}`);
+export const getWorldData = async (dispatch) => {
+  const response = await fetch(URL);
   const data = await response.json();
-  dispatch(loadData(data));
+  dispatch(loadWorldData(data));
 };
 
-export default getWorldData;
+export const getCountryData = (endpoint) => async (dispatch) => {
+  const response = await fetch(`${URL}${endpoint}`);
+  const data = await response.json();
+  dispatch(loadCountryData(data));
+};

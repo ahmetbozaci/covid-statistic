@@ -1,5 +1,4 @@
-/** @format */
-
+/* eslint-disable no-unused-vars */
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector } from 'react-redux';
 import { HiOutlineArrowCircleRight } from 'react-icons/hi';
@@ -7,12 +6,13 @@ import { Link } from 'react-router-dom';
 import { IoIosArrowBack, IoMdMic, IoMdSettings } from 'react-icons/io';
 import { Row, Col } from 'react-bootstrap';
 import store from '../redux/configureStore';
-import getWorldData from '../redux/API';
+import { getWorldData, getCountryData } from '../redux/API';
 import './Details.css';
 
-store.dispatch(getWorldData(''));
+store.dispatch(getWorldData);
+
 const Home = () => {
-  const state = useSelector((state) => state.covidData);
+  const state = useSelector((state) => state.covidData.data);
   const firstItem = Math.floor(Math.random() * state.length + 1);
   const newState = state.slice(firstItem, firstItem + 20);
   return (
@@ -25,15 +25,15 @@ const Home = () => {
           <IoMdSettings className="ms-3" />
         </div>
       </div>
-      <Row className="m-0">
-        <Col xs={6} className="pink2 p-5" />
-        <Col xs={6} className="pink p-5 fw-bold">
+      <Row className="m-0 pink">
+        <Col xs={6} className="p-5 bg-primary" />
+        <Col xs={6} className="p-5 fw-bold">
           {' '}
           World
           <p className="fw-normal">6534634</p>
         </Col>
       </Row>
-      <div className="pink fw-bold p-2">Countries New Case</div>
+      <div className="pink2 fw-bold p-2">Countries New Case</div>
       <Row className="m-0">
         {newState.map((item) => (
           <Col xs={6} key={uuidv4()} className="country text-end py-2">
@@ -48,7 +48,7 @@ const Home = () => {
                 className="mt-5 fs-3 pt-4"
                 aria-hidden="true"
                 onClick={() => {
-                  store.dispatch(getWorldData(`/${item.Country_text}`));
+                  store.dispatch(getCountryData(`/${item.Country_text}`));
                 }}
                 type="button"
               >

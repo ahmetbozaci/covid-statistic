@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 import { IoIosArrowBack, IoMdMic, IoMdSettings } from 'react-icons/io';
 import { HiOutlineArrowCircleRight } from 'react-icons/hi';
 import store from '../redux/configureStore';
-import getWorldData from '../redux/API';
+import { getWorldData } from '../redux/API';
 import './Details.css';
 
 const Details = () => {
-  const state = useSelector((state) => state.covidData);
+  const state = useSelector((state) => state.covidData.country);
 
   return (
     <div className="text-light fw-normal fs-5">
@@ -18,7 +18,7 @@ const Details = () => {
           <IoIosArrowBack
             className="text-light"
             onClick={() => {
-              store.dispatch(getWorldData(''));
+              store.dispatch(getWorldData);
             }}
           />
         </Link>

@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/configureStore';
-// import { getWorldData } from './redux/API';
 
-// store.dispatch(getWorldData);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

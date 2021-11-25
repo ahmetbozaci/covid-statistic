@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-key */
-/** @format */
-
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector } from 'react-redux';
 import { HiOutlineArrowCircleRight } from 'react-icons/hi';
@@ -9,7 +6,7 @@ import { IoIosArrowBack, IoMdMic, IoMdSettings } from 'react-icons/io';
 import { Row, Col } from 'react-bootstrap';
 import store from '../redux/configureStore';
 import { getWorldData, getCountryData } from '../redux/API';
-import './Details.css';
+import './Style.css';
 
 store.dispatch(getWorldData);
 
@@ -18,10 +15,9 @@ const Home = () => {
   const firstItem = Math.floor(Math.random() * state.length + 1);
   const newState = state.slice(firstItem, firstItem + 20);
   const worldData = state.slice(0, 1);
-  console.log(worldData);
   return (
     <div className="text-light">
-      <div className="d-flex justify-content-between pink p-4">
+      <div className="d-flex justify-content-between pink p-4 fs-5">
         <IoIosArrowBack />
         <span>World details</span>
         <div>
@@ -30,7 +26,7 @@ const Home = () => {
         </div>
       </div>
       <Row className="m-0 pink">
-        <Col xs={6} className="p-3 bg-primary" />
+        <Col xs={6} className="p-3" />
         <Col xs={6} className="p-3 fw-bolder fs-3">
           <p className="mt-5">
             WORLD
@@ -40,10 +36,10 @@ const Home = () => {
           {worldData.map((item) => (
             <p key={uuidv4()} className="fw-normal mb-5">{item['Total Cases_text']}</p>
           ))}
-          {/* <p className="fw-normal mb-5">{state[0]['Total Cases_text']}</p> */}
+          {/* <p className="fw-normal mb-5">{state[0][0]['Total Cases_text']}</p> */}
         </Col>
       </Row>
-      <div className="pink2 fw-bold p-2">Countries New Case</div>
+      <div className="pink3 fw-bold p-2">Countries New Case</div>
       <Row className="m-0">
         {newState.map((item) => (
           <Col xs={6} key={uuidv4()} className="country text-end py-2">

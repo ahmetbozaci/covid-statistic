@@ -6,7 +6,7 @@ import { IoIosArrowBack, IoMdMic, IoMdSettings } from 'react-icons/io';
 import { HiOutlineArrowCircleRight } from 'react-icons/hi';
 import store from '../redux/configureStore';
 import { getWorldData } from '../redux/API';
-import './Details.css';
+import './Style.css';
 
 const Details = () => {
   const state = useSelector((state) => state.covidData.country);
@@ -34,7 +34,7 @@ const Details = () => {
           <span className="fw-light">Last Update</span>
           <p className="fw-light">{state['Last Update']}</p>
         </li>
-        <li className="pink2 px-4 py-1 fw-normal">Covid Statistic</li>
+        <li className="pink3 px-4 py-1 fw-normal">Covid Statistic</li>
         <li className="d-flex justify-content-between p-4 pink">
           <span className="fw-bold">Active Cases</span>
           <div className="fw-normal">

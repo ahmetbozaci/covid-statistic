@@ -21,10 +21,12 @@
 .country:nth-child(4n + 3) {
   background-color: #d1447a;
 }
+
 .world-map {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       rgba(239 43 120 / 70%) 100%,
-    rgba(231, 73, 135, 0.5) 100%
+      rgba(231, 73, 135, 0.5) 100%
     ),
     url('../img.png');
   background-size: cover;

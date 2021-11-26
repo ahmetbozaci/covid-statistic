@@ -1,3 +1,5 @@
+/** @format */
+
 .pink {
   background-color: #e74987;
 }
@@ -10,12 +12,22 @@
   background-color: #c1507b;
 }
 
-.country:nth-child(4n+1),
+.country:nth-child(4n + 1),
 .country:nth-child(4n) {
   background-color: #e74987;
 }
 
-.country:nth-child(4n+2),
-.country:nth-child(4n+3) {
+.country:nth-child(4n + 2),
+.country:nth-child(4n + 3) {
   background-color: #d1447a;
+}
+
+.world-map {
+  background:
+    linear-gradient(
+      rgba(239 43 120 / 70%) 100%,
+      rgba(231, 73, 135, 0.5) 100%
+    ),
+    url('../img.png');
+  background-size: cover;
 }

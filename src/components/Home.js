@@ -25,9 +25,9 @@ const Home = () => {
           <IoMdSettings className="ms-3" />
         </div>
       </div>
-      <Row className="m-0 pink">
+      <Row className="m-0 world-map">
         <Col xs={6} className="p-3" />
-        <Col xs={6} className="p-3 fw-bolder fs-3 pink">
+        <Col xs={6} className="p-3 fw-bolder fs-3">
           <p className="mt-5">
             WORLD
             <br />

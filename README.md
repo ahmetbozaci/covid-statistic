@@ -12,14 +12,14 @@
 
 ## Live Demo
 
-[Space Travelers Hub-Netlify](https://space-traveler-hub.netlify.app/)
+[Covid World Statistic -Netlify](https://covid-world-statistic.netlify.app/)
 
 
 ## Setup
 - Clone this project
 ```
-- $ git clone `$ https://github.com/ahmetbozaci/space-traveler-hub`
-- $ cd book-store
+- $ git clone `$ https://github.com/ahmetbozaci/react-capstone.git`
+- $ cd react-capstone
 ```
 - Install npm packages
 ```

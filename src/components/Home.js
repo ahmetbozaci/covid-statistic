@@ -36,7 +36,6 @@ const Home = () => {
           {worldData.map((item) => (
             <p key={uuidv4()} className="fw-normal mb-5">{item['Total Cases_text']}</p>
           ))}
-          {/* <p className="fw-normal mb-5">{state[0][0]['Total Cases_text']}</p> */}
         </Col>
       </Row>
       <div className="pink3 fw-bold p-2">Countries New Case</div>

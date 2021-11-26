@@ -48,5 +48,6 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-https://creativecommons.org/licenses/by-nc/4.0/
+* This project is [MIT](./LICENSE) licensed.
+* [Creative Common License of design](https://creativecommons.org/licenses/by-nc/4.0/)
+* Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)

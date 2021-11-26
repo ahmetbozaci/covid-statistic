@@ -23,8 +23,8 @@
 }
 .world-map {
   background: linear-gradient(
-      rgba(231, 73, 135, 0.7) 100%,
-      rgba(231, 73, 135, 0.5) 100%
+      rgba(239 43 120 / 70%) 100%,
+    rgba(231, 73, 135, 0.5) 100%
     ),
     url('../img.png');
   background-size: cover;

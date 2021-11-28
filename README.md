@@ -1,6 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # React Capstone
+<!-- Add screenshot, add description of website -->
 
 ## Built With
 

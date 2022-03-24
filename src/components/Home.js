@@ -1,20 +1,27 @@
+/* eslint-disable no-unused-vars */
 import { v4 as uuidv4 } from 'uuid';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { HiOutlineArrowCircleRight } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import { IoIosArrowBack, IoMdMic, IoMdSettings } from 'react-icons/io';
+import { useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import store from '../redux/configureStore';
 import { getWorldData, getCountryData } from '../redux/API';
 import './Style.css';
 
-store.dispatch(getWorldData);
-
 const Home = () => {
+  const dispatch = useDispatch();
   const state = useSelector((state) => state.covidData.data);
-  const firstItem = Math.floor(Math.random() * state.length + 1);
-  const newState = state.slice(firstItem, firstItem + 20);
   const worldData = state.slice(0, 1);
+
+  useEffect(() => {
+    dispatch(getWorldData);
+  }, []);
+
+  const handleClick = (countryName) => {
+    dispatch(getCountryData(countryName));
+  };
+
   return (
     <div className="text-light">
       <div className="d-flex justify-content-between pink p-4 fs-5">
@@ -40,7 +47,7 @@ const Home = () => {
       </Row>
       <div className="pink3 fw-bold p-2">Countries New Case</div>
       <Row className="m-0">
-        {newState.map((item) => (
+        {state.map((item) => (
           <Col xs={6} key={uuidv4()} className="country text-end py-2">
             <Link
               to="/details"
@@ -53,7 +60,7 @@ const Home = () => {
                 className="mt-5 fs-3 pt-4"
                 aria-hidden="true"
                 onClick={() => {
-                  store.dispatch(getCountryData(`/${item.Country_text}`));
+                  handleClick(item.Country_text);
                 }}
                 type="button"
               >

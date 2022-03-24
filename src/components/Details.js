@@ -1,11 +1,7 @@
-/** @format */
-
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { IoIosArrowBack, IoMdMic, IoMdSettings } from 'react-icons/io';
 import { HiOutlineArrowCircleRight } from 'react-icons/hi';
-import store from '../redux/configureStore';
-import { getWorldData } from '../redux/API';
 import './Style.css';
 
 const Details = () => {
@@ -17,9 +13,6 @@ const Details = () => {
         <Link to="/">
           <IoIosArrowBack
             className="text-light"
-            onClick={() => {
-              store.dispatch(getWorldData);
-            }}
           />
         </Link>
         <span>country details</span>

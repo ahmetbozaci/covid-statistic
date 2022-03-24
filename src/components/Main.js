@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 import { getWorldData } from '../redux/API';
+import './Style/Main.css';
 
 const Main = () => {
   const dispatch = useDispatch();

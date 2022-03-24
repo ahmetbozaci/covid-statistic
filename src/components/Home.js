@@ -1,4 +1,3 @@
-import './Style.css';
 import Navbar from './Navbar';
 import Main from './Main';
 import NewCases from './NewCases';

@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { IoIosArrowBack, IoMdMic, IoMdSettings } from 'react-icons/io';
 import { HiOutlineArrowCircleRight } from 'react-icons/hi';
-import './Style.css';
+import './Style/Details.css';
 
 const Details = () => {
   const state = useSelector((state) => state.covidData.country);

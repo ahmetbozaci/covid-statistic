@@ -1,0 +1,9 @@
+.world-map {
+  background:
+    linear-gradient(
+      rgba(239 43 120 / 70%) 100%,
+      rgba(231, 73, 135, 0.5) 100%
+    ),
+    url('../assets/img.png');
+  background-size: cover;
+}

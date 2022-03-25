@@ -9,7 +9,7 @@ export const getWorldData = async (dispatch) => {
 };
 
 export const getCountryData = (endpoint) => async (dispatch) => {
-  const response = await fetch(`${URL}${endpoint}`);
+  const response = await fetch(`${URL}/${endpoint}`);
   const data = await response.json();
   dispatch(loadCountryData(data));
 };

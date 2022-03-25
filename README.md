@@ -1,10 +1,11 @@
 [![](https://img.shields.io/badge/Microverse-blueviolet)](https://www.microverse.org/?grsf=04r25h)
 
-# Covid World Statistic
- > Covid statistic page created for mobile devices. 
- - Statistics will update everyday from the [API](https://covid-19.dataflowkit.com/).
- - Main page show new covid cases for every country and also show total covid case number in the world.
- - You can click any country in the main page for see statistic details.
+# Covid World Statistic 
+ > Covid statistic page created for mobile devices.
+
+- Statistics will update every day from the [API](https://covid-19.dataflowkit.com/).
+- The main page shows new covid cases for every country and also shows the total covid case number in the world.
+- You can click any country on the main page to see statistic details.
 
 ![Demo](demo.gif)
 

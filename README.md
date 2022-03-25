@@ -1,19 +1,24 @@
 [![](https://img.shields.io/badge/Microverse-blueviolet)](https://www.microverse.org/?grsf=04r25h)
 
 # Covid World Statistic
-<!-- Add screenshot, add description of website etc-->
+ > Covid statistic page created for mobile devices. 
+ - Statistics will update everyday from the [API](https://covid-19.dataflowkit.com/).
+ - Main page show new covid cases for every country and also show total covid case number in the world.
+ - You can click any country in the main page for see statistic details.
 
+![Demo](demo.gif)
+
+## Live Demo
+
+[Covid World Statistic](https://covid-world-statistic.netlify.app/)
 ## Built With
 
-- Html
 - Javascript
 - React
 - Redux
 - React-Bootstrap
 
-## Live Demo
 
-[Covid World Statistic](https://covid-world-statistic.netlify.app/)
 
 
 ## Setup
@@ -40,14 +45,14 @@
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-
 Feel free to check the [issues page](../../issues/).
 
 ## Show your support
-
 Give a ⭐️ if you like this project!
+
 ## Acknowledgments
 * Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
+  
 ## 📝 License
 
 * This project is [MIT](./LICENSE) licensed.

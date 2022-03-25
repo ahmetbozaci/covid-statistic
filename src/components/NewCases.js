@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useSelector, useDispatch } from 'react-redux';
 import { HiOutlineArrowCircleRight } from 'react-icons/hi';
 import { Row, Col } from 'react-bootstrap';

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useSelector, useDispatch } from 'react-redux';
 import { HiOutlineArrowCircleRight } from 'react-icons/hi';
 import { Row, Col } from 'react-bootstrap';
@@ -13,9 +14,31 @@ const NewCases = () => {
     dispatch(getCountryData(countryName));
   };
 
+  const handleSearch = (e) => {
+    const inputValue = e.target.value.toUpperCase();
+    const countryNameList = document.getElementsByClassName('countryName');
+    const countryContainer = document.getElementsByClassName('country');
+    for (let i = 0; i < countryNameList.length; i += 1) {
+      const countryName = countryNameList[i].textContent.toUpperCase();
+      if (countryName.indexOf(inputValue) > -1) {
+        countryContainer[i].style.display = '';
+      } else {
+        countryContainer[i].style.display = 'none';
+      }
+    }
+  };
+
   return (
     <div>
       <div className="pink3 fw-bold p-2">New Covid Cases By Countries</div>
+      <div className="pink3 fw-bold p-2">
+        <input
+          type="text"
+          onKeyUp={handleSearch}
+          className="border-0 rounded p-1"
+          placeholder="Search country"
+        />
+      </div>
       <Row className="m-0">
         {state.map((item) => (
           <Col xs={6} key={uuidv4()} className="country text-end py-2">
@@ -34,7 +57,7 @@ const NewCases = () => {
                 }}
                 type="button"
               >
-                {item.Country_text}
+                <p className="countryName">{item.Country_text}</p>
                 <p className="m-0">
                   {item['New Deaths_text'] === '' ? 0 : item['New Deaths_text']}
                 </p>

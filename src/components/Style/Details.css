@@ -1,0 +1,21 @@
+.pink {
+  background-color: #e74987;
+}
+
+.pink2 {
+  background-color: #d1447a;
+}
+
+.pink3 {
+  background-color: #c1507b;
+}
+
+.country:nth-child(4n + 1),
+.country:nth-child(4n) {
+  background-color: #e74987;
+}
+
+.country:nth-child(4n + 2),
+.country:nth-child(4n + 3) {
+  background-color: #d1447a;
+}
